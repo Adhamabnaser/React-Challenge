@@ -5,7 +5,6 @@ export default function Forgetpass()
   const {theme} = useContext(authContext)
 
   return (
-    
     <div className={`border w-[80%] mx-auto max-sm:w-[90%] h-[45vh] mt-10`}>
       <div className={`p-12`}>
         <h2 className='text-center font-mono'>Enter E-Mail TO Help Us TO Mange Your Problem</h2>
