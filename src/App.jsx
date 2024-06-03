@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { Toaster } from 'react-hot-toast';
 import { Offline } from 'react-detect-offline';
 import { AuthProvider } from './componants/context/authentication';
-import { IoReload } from "react-icons/io5";
 import './App.css';
 // import Layouts from './componants/layout/Layouts';
 // import Post from './componants/posts/Post';
@@ -64,7 +63,9 @@ function App()
 
 
   return <>
-    <Suspense fallback={<div className=''><h2 className='font-bold mt-10 text-center flex justify-center'>Loading...<span className='pt-1 ps-1'><IoReload/></span></h2></div>}>
+    <Suspense fallback={<div className=''>
+      {/* <h2 className='font-bold mt-10 text-center flex justify-center'>Loading...<span className='pt-1 ps-1'></span></h2> */}
+      </div>}>
 
       <QueryClientProvider client={QueruClient}>
           <RouterProvider router={appRouter}/>
@@ -74,7 +75,7 @@ function App()
     </Suspense>
   <Offline>
           <div className='fixed bottom-0 start-0 bg-slate-700 text-white p-3 rounded-3'>
-            <h2>You Are Offline, Please Check Your Internet Connection.</h2>
+            <h2>You Are Offline, Please Check Your Internet Connection...</h2>
           </div>
   </Offline>
   </>
