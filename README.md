@@ -5,7 +5,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
-
+### `npm i`
+After open the code from githup, you should download all dependencies and node modules
+to make this project work in vs code.w
 ### `npm start`
 
 Runs the app in the development mode.\
