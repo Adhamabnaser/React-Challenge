@@ -1,9 +1,5 @@
 import React, { useContext,useMemo,useState } from 'react'
 import { authContext } from '../context/authentication'
-// import { BsPersonCircle } from 'react-icons/bs';
-// import { PiSubtitlesThin } from "react-icons/pi";
-// import { GrArticle } from "react-icons/gr";
-// import { CgMoreO } from "react-icons/cg";
 import { MdContentPasteSearch } from "react-icons/md";
 import axios from 'axios';
 import PostsShow from './postsShow';
@@ -17,12 +13,7 @@ import toast from 'react-hot-toast';
 export default function Post() 
 {
   const {theme}= useContext(authContext)
-  
-
   //==============
-  
-  
-  
   const[inputSearch,setInputSearch]=useState('')
   const[filterdSearch,setFilterdSearch]=useState([])
    //==============
@@ -57,13 +48,7 @@ export default function Post()
     );
     }
   },[])
-  //----------handle search
-  
-  // const inputRef = useRef()
-  // useEffect(function () 
-  // {
-  //   console.log(inputRef.current.value);
-  // },[inputRef])
+ 
   const handlechange =(value)=>
   {
     setInputSearch(value)
@@ -81,7 +66,6 @@ export default function Post()
   const indexOfLastPost = currentPage*postPerPage
   const indexOfFristPage = indexOfLastPost-postPerPage
   const currentPosts = posts.slice(indexOfFristPage,indexOfLastPost)
-  // console.log(currentPosts);
   //paginate
   const paginate = (pageNumber)=> setCurrentPage(pageNumber)
   
@@ -115,27 +99,7 @@ export default function Post()
               <>
                 <ShowSearch filterdSearch={filterdSearch} loading={loading}/>
               </>
-            }
-            
-            {/* {
-              currentPosts.map((item ,idx)=>
-              {
-                return <div key={idx} className={`p-10 border border-x-0 border-b-0 ${theme==='dark'? `border-black`:`border-white`}`}>
-                  <div className='person border flex justify-between'>
-                    <h1 className=' ps-4 flex'><span className='pe-2'><BsPersonCircle className='pt-1 text-xl' /></span> UserName : {item.userId} </h1>
-                    <div className='pt-1 me-3'><CgMoreO /></div>
-                    </div>
-                    <h2 className='font-semibold ps-4 pt-3 flex '><span className='pe-2'><PiSubtitlesThin className='text-xl '/></span> {item.title} </h2>
-                  <div className='mt-3 border p-2'>
-                  <h2 className='font-bold ps-4 flex justify-center'><span className='pe-2'><GrArticle className='text-lg '/></span>body</h2>
-                  <p className='text-start'>{item.body}</p>
-                  </div>
-                  </div>
-                  
-              })
-            } */}
-         
-            
+            } 
           </div>
         </div>
       </main>

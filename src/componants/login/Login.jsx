@@ -3,92 +3,17 @@ import desgin from './login.module.css'
 import logo from '../image/1453176-200.png'
 import { Link, useNavigate} from 'react-router-dom'
 import { authContext } from '../context/authentication'
-// import { InfinitySpin } from 'react-loader-spinner'
-// import toast from 'react-hot-toast'
-// import axios from 'axios'
-// import { useFormik } from 'formik'
+
 export default function Login() 
 {
   const navigate = useNavigate()
-//   const [isloading , setIsloading] = useState(false)
-  const {
-    // token ,
-    // setToken ,
-    theme } = useContext(authContext)
-//   console.log(token);
-//   let users = {
-//     email:"",
-//     password:"",
-//  }
-//  const loginUser = async(values) =>
-//   {
-//     try {
-//       setIsloading(true)
-//       const {data} = await axios.post('https://ecommerce.routemisr.com/api/v1/auth/signin',values)
-//       console.log(data);
-//       if (data.message === 'success') 
-//       {
-//         setTimeout(   ()=>navigate('/product')      , 500  )
-//         toast('Welcome '+ data.user.name,
-//           {
-//             icon: '✔️',
-//             style: {
-//               borderRadius: '6px',
-//               background: 'white',
-//               color: 'black',
-//               border: '1px solid black',
-//               fontFamily:'monospace'
-//             },
-//           }
-//         );   
-//         localStorage.setItem('tkn' , data.token) 
-//         setToken(data.token) 
-//       }
-//       setIsloading(false)
-//     } catch (error) {
-//       console.log(error.response);
-//       // toast.error(error.response.data.message);
-//       toast('Please, Write E-Mail Or Password Correct',
-//             {
-//               icon: '✖',
-//               style: {
-//                 borderRadius: '6px',
-//                 background: 'white',
-//                 color: 'black',
-//                 border: '1px solid black',
-//                 fontFamily:'monospace'
-//               },
-//             }
-//           );
-//     }
-//     }
-//   const formikObj = useFormik({
-//     initialValues: users,
-//     onSubmit: loginUser,
-//     validate: (values) => {
-
-//       let errors = {};
-//       // const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-//       // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
-
-//       // if (!emailRegex.test(values.email)) {
-//       //   errors.email = "Invalid email address";
-//       // }
-//       // if (!passwordRegex.test(values.password)) {
-//       //   errors.password = "Invalid password";
-//       // }
-//       console.log(values);
-//       return errors;
-//     }
-//   })
-  
+  const {theme } = useContext(authContext)
 
   return <>
   <div className={`h-screen ${theme==='dark'?'bg-white' : 'bg-black'}`}>
     <div className='flex justify-center'>
       
       <form 
-        // onSubmit={formikObj.handleSubmit} 
         className={desgin.form_container}>
         <div onClick={()=>navigate('/posts')} className={desgin.logo_container + ' cursor-pointer'}>
           <img className={`border rounded-xl ${theme==='dark'?``:`border-black border-2`}`} src={logo} alt='logo' loading='lazy'/>
@@ -106,9 +31,7 @@ export default function Login()
           <label className={desgin.input_label} htmlFor="email_field">Email</label>
         
           <input
-          //  onChange={formikObj.handleChange} onBlur={formikObj.handleBlur} value={formikObj.values.email}
             required placeholder="name@mail.com" title="Inpit title" name="email" type="text" 
-            // className={formikObj.errors.email && formikObj.touched.email? desgin.input_field1 : desgin.input_field} id="email_field"
             className={ desgin.input_field} id="email_field"
             />
         </div>
@@ -125,7 +48,6 @@ export default function Login()
 
           <label className={desgin.input_label} htmlFor="password_field">Password</label>
           <input
-          //  onChange={formikObj.handleChange} onBlur={formikObj.handleBlur} value={formikObj.values.password} 
            required='Must Enter Password' placeholder="Password" title="Inpit title" name="password" type={'password'} className={desgin.input_field} id="password_field"/>
         
         </div>
@@ -142,23 +64,7 @@ export default function Login()
 
         <button  type="submit" className={`border w-full rounded-full py-[7px] ${theme ==='dark'? `text-white bg-black`:` border-black`}` }>
         Log In
-          {/* {
-            isloading? <> 
-              <div className={'flex justify-center pe-10'}>
-                <InfinitySpin
-                    visible={false}
-                    width="90"
-                    color="white"
-                    ariaLabel="infinity-spin-loading"
-                    
-                    />
-                  
-              </div>
-            </>:
-            <span className={' fw-bold text-white'}>
-              Log In
-            </span>
-          } */}
+          
         </button>
 
 

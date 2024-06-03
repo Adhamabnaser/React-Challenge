@@ -5,14 +5,7 @@ import { Toaster } from 'react-hot-toast';
 import { Offline } from 'react-detect-offline';
 import { AuthProvider } from './componants/context/authentication';
 import './App.css';
-// import Layouts from './componants/layout/Layouts';
-// import Post from './componants/posts/Post';
-// import Login from './componants/login/Login';
-// import Register from './componants/register/Register';
-// import NotFound from './componants/notfound/NotFound';
-// import Profile from './componants/profile/Profile';
-// import Forgetpass from './componants/forgetpass/Forgetpass';
-// import PostDetails from './componants/postDetails/PostDetails';
+
 
 const Layouts = lazy(()=>import ('./componants/layout/Layouts'))
 const Post = lazy(()=>import ( './componants/posts/Post'))
@@ -63,9 +56,7 @@ function App()
 
 
   return <>
-    <Suspense fallback={<div className=''>
-      {/* <h2 className='font-bold mt-10 text-center flex justify-center'>Loading...<span className='pt-1 ps-1'></span></h2> */}
-      </div>}>
+    <Suspense fallback={<div></div>}>
 
       <QueryClientProvider client={QueruClient}>
           <RouterProvider router={appRouter}/>
