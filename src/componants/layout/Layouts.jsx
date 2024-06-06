@@ -2,7 +2,8 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Navbar from '../navbar/Navbar'
 
-export default function Layouts() {
+
+ function Layouts() {
   return <><main>
     <nav>
         <Navbar/>
@@ -12,3 +13,4 @@ export default function Layouts() {
   </main>
   </>
 }
+export default React.memo(Layouts)

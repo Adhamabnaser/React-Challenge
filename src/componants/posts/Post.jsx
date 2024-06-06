@@ -1,4 +1,4 @@
-import React, { useContext,useMemo,useState } from 'react'
+import React, { useContext,useEffect,useState } from 'react'
 import { authContext } from '../context/authentication'
 import { MdContentPasteSearch } from "react-icons/md";
 import axios from 'axios';
@@ -10,7 +10,7 @@ import toast from 'react-hot-toast';
 
 
 
-export default function Post() 
+ function Post() 
 {
   const {theme}= useContext(authContext)
   //==============
@@ -21,7 +21,8 @@ export default function Post()
   const[loading , setloading]=useState(false)
   const[currentPage , setCurrentPage]=useState(1)
   const[postPerPage ]=useState(10)
-  useMemo(function () 
+
+  useEffect(function () 
   {
     try {
       const fetchPost = async()=>
@@ -49,7 +50,7 @@ export default function Post()
     }
   },[])
  
-  const handlechange =(value)=>
+  const handlechange = (value)=>
   {
     setInputSearch(value)
     const befilterd = [...posts]
@@ -106,3 +107,4 @@ export default function Post()
     
   </>
 }
+export default Post

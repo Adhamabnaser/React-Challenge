@@ -14,14 +14,14 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 
 
 
+
+
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-
-
-
-export default function Navbar() 
+ function Navbar() 
 {
 
 
@@ -192,3 +192,4 @@ export default function Navbar()
   
   </>
 }
+export default React.memo(Navbar)

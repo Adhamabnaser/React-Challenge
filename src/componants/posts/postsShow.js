@@ -32,9 +32,10 @@ const PostsShow = ({currentPosts,loading}) =>
                               <p className='text-start'>{post.body}</p>
                             </div>
                         </div>
+                        
                 })
               }
-                 
+
             </>
 }
 export default PostsShow
